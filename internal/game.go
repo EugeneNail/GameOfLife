@@ -2,11 +2,11 @@ package internal
 
 import (
 	"github.com/hajimehoshi/ebiten/v2"
+	"github.com/hajimehoshi/ebiten/v2/examples/resources/fonts"
 	"golang.org/x/image/font"
 	"golang.org/x/image/font/opentype"
 	"image/color"
 	"math"
-	"os"
 )
 
 type Game struct {
@@ -48,12 +48,7 @@ func NewGame(columns int, screenWidth int, screenHeight int) *Game {
 }
 
 func (game *Game) importFont() {
-	fontBytes, err := os.ReadFile("./assets/font/Roboto-Medium.ttf")
-	if err != nil {
-		panic(err)
-	}
-
-	tt, err := opentype.Parse(fontBytes)
+	tt, err := opentype.Parse(fonts.MPlus1pRegular_ttf)
 	if err != nil {
 		panic(err)
 	}

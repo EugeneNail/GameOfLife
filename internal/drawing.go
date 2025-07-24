@@ -59,7 +59,7 @@ func (game *Game) drawGridBorders(image *ebiten.Image) {
 }
 
 func (game *Game) drawInfo(image *ebiten.Image) {
-	height := float32(210)
+	height := float32(260)
 	width := float32(150)
 	xOffset := float32(10)
 
